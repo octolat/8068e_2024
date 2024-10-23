@@ -18,13 +18,13 @@ It will run forever once you call it in main()
 Move the bot forward for given amount of turns
 
 Destination   
-	How many turns to move forward by.  
-	If you want to move backwards, set this number to a negative number  
+---How many turns to move forward by.  
+---If you want to move backwards, set this number to a negative number  
 Timeout  
-	How long to wait for the robot to reach the destination before giving up and moving on, in   
+---How long to wait for the robot to reach the destination before giving up and moving on, in   
 seconds   
-	This is **optional**, you can leave it blank to wait forever  
-	Useful in situations where you might hit a wall and get stuck
+---This is **optional**, you can leave it blank to wait forever  
+---Useful in situations where you might hit a wall and get stuck
 
 **examples**:  
 moveForTurns(0.55); // move forwards by 0.55 turns, will keep trying to turn 0.55 turns forever  
@@ -36,7 +36,7 @@ moveP and moveConst
 Simplified Controller idea: moveP \* (destination \- currentPosition) \+ moveConst  
 moveP → the normal P value in a PID controller, multiplied by the error to increase or decrease the speed of the drivetrain  
 moveConst → no matter the error, the drive train will move by this speed minimally  
-		Set your moveConst so that even if moveP is 0, the drive train can still move abit slowly
+------Set your moveConst so that even if moveP is 0, the drive train can still move abit slowly
 
 # turnToDegrees(float destination, int pivotSetting, int timeout)
 
@@ -44,19 +44,18 @@ moveConst → no matter the error, the drive train will move by this speed minim
 Turn the bot until it faces the heading given
 
 Destination  
-	The heading you want the bot to face  
+---The heading you want the bot to face  
 pivotSetting  
-	Either Both, Left, or Right  
-	If Both, the robot will turn in a spot turn manner  
-	If Left, only the left side of the drivetrain will move, and the right side will remain stationary,   
+---Either Both, Left, or Right  
+---If Both, the robot will turn in a spot turn manner  
+---If Left, only the left side of the drivetrain will move, and the right side will remain stationary,   
 resulting in a pivot turn   
-If right, the same but the right side moves  
-This is **Optional**, default is Both  
+---If right, the same but the right side moves  
+---This is **Optional**, default is Both  
 Timeout  
-	How long to wait for the robot to reach the heading before giving up and moving on, in   
-seconds   
-	This is **optional**, you can leave it blank to wait forever  
-	Useful in situations where you might hit a wall and get stuck
+---How long to wait for the robot to reach the heading before giving up and moving on, in seconds   
+---This is **optional**, you can leave it blank to wait forever  
+---Useful in situations where you might hit a wall and get stuck
 
 **Examples**  
 turnToDegree(39); // turn and face the heading 39, spot turns, will try forever  
@@ -69,7 +68,7 @@ turnP and turnConst
 Simplified Controller idea: turnP \* (destination \- currentPosition) \+ turnConst  
 turnP → the normal P value in a PID controller, multiplied by the error to increase or decrease the speed of the drivetrain  
 turnConst → no matter the error, the drivetrain will move by this speed minimally  
-		Set your turnConst so that even if moveP is 0, the drive train can still move abit slowly
+            Set your turnConst so that even if moveP is 0, the drive train can still move abit slowly
 
 # driveMacro(int action, float argument1, float argument2)
 
@@ -112,6 +111,6 @@ TODO\[5\] \--\> these are the pid variables for turnToDegree() and moveForTurns(
 TODO\[6\] \--\> uncomment the code that you want to run before uploading  
 TODO\[7\] \--\> choose Brake, Coast or Hold for your drive train during driver control  
 TODO\[8\] \--\> code stuff other than the drivetrain for your driver control mode  
-    	         github has the over under code for you to refer to  
+    ---         github has the over under code for you to refer to  
 TODO\[9\] \--\> your auton\_one/auton\_two/auton\_skills code  
 TODO\[10\] \--\> do wtv you want to set up before each auton
