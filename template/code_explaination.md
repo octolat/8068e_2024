@@ -21,14 +21,13 @@ Destination
 ---How many turns to move forward by.  
 ---If you want to move backwards, set this number to a negative number  
 Timeout  
----How long to wait for the robot to reach the destination before giving up and moving on, in   
-seconds   
+---How long to wait for the robot to reach the destination before giving up and moving on, in seconds   
 ---This is **optional**, you can leave it blank to wait forever  
 ---Useful in situations where you might hit a wall and get stuck
 
-**examples**:  
-moveForTurns(0.55); // move forwards by 0.55 turns, will keep trying to turn 0.55 turns forever  
-moveForTurns(\-3, 4); // move backwards by 3 turns, if it has not turned 3 turns in 4 seconds, it will give up and move on
+**examples**: 
+`moveForTurns(0.55); // move forwards by 0.55 turns, will keep trying to turn 0.55 turns forever
+moveForTurns(\-3, 4); // move backwards by 3 turns, if it has not turned 3 turns in 4 seconds, it will give up and move on`
 
 **Tuning**  
 This function uses a modified PID controller. The tuned values are stored in the global variables:   
@@ -36,7 +35,7 @@ moveP and moveConst
 Simplified Controller idea: moveP \* (destination \- currentPosition) \+ moveConst  
 moveP → the normal P value in a PID controller, multiplied by the error to increase or decrease the speed of the drivetrain  
 moveConst → no matter the error, the drive train will move by this speed minimally  
-------Set your moveConst so that even if moveP is 0, the drive train can still move abit slowly
+            Set your moveConst so that even if moveP is 0, the drive train can still move abit slowly
 
 # turnToDegrees(float destination, int pivotSetting, int timeout)
 
@@ -58,9 +57,9 @@ Timeout
 ---Useful in situations where you might hit a wall and get stuck
 
 **Examples**  
-turnToDegree(39); // turn and face the heading 39, spot turns, will try forever  
+`turnToDegree(39); // turn and face the heading 39, spot turns, will try forever  
 turnToDegree(320, Left);  // turn and face heading 320, pivot turn with left side moving, will try forever  
-turnToDegree(75, Both, 3); // turn and face heading 75, spot turn, will try for 3 seconds before giving up
+turnToDegree(75, Both, 3); // turn and face heading 75, spot turn, will try for 3 seconds before giving up`
 
 **Tuning**  
 This function uses a modified PID controller. The tuned values are stored in the global variables:   
@@ -86,12 +85,12 @@ Basically a short cut so you dont have to repeat 6 lines just to make the 6 moto
 | SpinTo | Encoder position for left side to move to | Encoder position for right side to move to | Runs motor.spinTo() For all 6 motors (very jank, dont use) |
 
 **Examples:**  
-//Make the bot turn in a clockwise manner for 3 seconds, and set breaking to coast   
+`//Make the bot turn in a clockwise manner for 3 seconds, and set breaking to coast   
 driveMacro(SetBraking, Coast);  
 driveMacro(SetSpeed, 100, \-100);  
 driveMacro(Spin);  
 wait(3, seconds);  
-driveMacro(Stop);
+driveMacro(Stop);`
 
 # TODOs
 
